@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ikea Buddy</string>
+    <string name="item_name">Item Name</string>
+    <string name="submitButton">Submit</string>
+    <string name="hint_price">Ex: 5.99</string>
+    <string name="hint_item">Item Name</string>
+    <string name="hint_url">Ex: https://ikea.com/myThing</string>
+</resources>
