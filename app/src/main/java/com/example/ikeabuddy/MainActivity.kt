@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.text.method.LinkMovementMethod
 
 class MainActivity : AppCompatActivity() {
     lateinit var items: List<Item>
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             id += 1
             itemCount += 1
             // Update the RecyclerView
+            // Based on https://stackoverflow.com/questions/31367599/how-to-update-recyclerview-adapter-data
             adapter.notifyDataSetChanged()
             // Clear the old data
             newName.text.clear()

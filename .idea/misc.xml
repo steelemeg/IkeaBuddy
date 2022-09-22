@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Megan/AndroidStudioProjects/IkeaBuddy/app/src/main/res/drawable/button.xml" value="0.195" />
+        <entry key="..\:/Users/Megan/AndroidStudioProjects/IkeaBuddy/app/src/main/res/drawable/effect.xml" value="0.195" />
         <entry key="..\:/Users/Megan/AndroidStudioProjects/IkeaBuddy/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Megan/AndroidStudioProjects/IkeaBuddy/app/src/main/res/layout/add_item.xml" value="0.365625" />
         <entry key="..\:/Users/Megan/AndroidStudioProjects/IkeaBuddy/app/src/main/res/layout/list_item.xml" value="0.36666666666666664" />
