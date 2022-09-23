@@ -42,8 +42,7 @@ class MainActivity : AppCompatActivity() {
         itemsRv.adapter = adapter
         // Set layout manager to position the items
         itemsRv.layoutManager = LinearLayoutManager(this)
-
-        // Long press logic based on https://medium.com/@harivigneshjayapalan/android-recyclerview-implementing-single-item-click-and-long-press-part-ii-b43ef8cb6ad8
+        
         itemsRv.addOnItemTouchListener(
             RecyclerTouchListener(this,
                 itemsRv, object : ClickListener {
