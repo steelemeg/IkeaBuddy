@@ -89,7 +89,10 @@ internal class RecyclerTouchListener(
     private val clicklistener: ClickListener?
 ) :
     OnItemTouchListener {
-    // Based on https://medium.com/@harivigneshjayapalan/android-recyclerview-implementing-single-item-click-and-long-press-part-ii-b43ef8cb6ad8
+    // Based on :
+    // https://guides.codepath.com/android/using-the-recyclerview#handling-touch-events
+    // https://medium.com/@harivigneshjayapalan/android-recyclerview-implementing-single-item-click-and-long-press-part-ii-b43ef8cb6ad8
+    // https://stackoverflow.com/questions/24471109/recyclerview-onclick/26826692#26826692
     private val gestureDetector: GestureDetector
     override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
         val child = rv.findChildViewUnder(e.x, e.y)
