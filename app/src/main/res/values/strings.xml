@@ -4,6 +4,6 @@
     <string name="submitButton">Submit</string>
     <string name="hint_price">Ex: 5.99</string>
     <string name="hint_item">Item Name</string>
-    <string name="hint_url">Ex: https://ikea.com/myThing</string>
+    <string name="hint_url">Ex: https://www.ikea.com/myThing</string>
     <string name="nameError">Name is required</string>
 </resources>

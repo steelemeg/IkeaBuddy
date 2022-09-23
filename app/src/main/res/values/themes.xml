@@ -3,7 +3,7 @@
     <style name="Theme.IkeaBuddy" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#0077C8</item>
-        <item name="backgroundColor">#FFDA01</item>
+        <item name="backgroundColor">#003399</item>
         <item name="colorPrimaryVariant">#003399</item>
         <item name="colorOnPrimary">#FFDA01</item>
         <item name="android:textColorPrimary">#003399</item>
