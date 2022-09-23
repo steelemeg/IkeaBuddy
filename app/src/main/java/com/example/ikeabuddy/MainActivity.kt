@@ -7,10 +7,12 @@ import android.view.GestureDetector
 import android.view.GestureDetector.SimpleOnGestureListener
 import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.set
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
@@ -27,8 +29,7 @@ class MainActivity : AppCompatActivity() {
         val newPrice = findViewById<EditText>(R.id.priceEt)
         val newUrl = findViewById<EditText>(R.id.urlEt)
         var itemCount = 0
-        var id = 0
-        var index = -1
+        var goodItem = true
 
         // Lookup the RecyclerView in activity layout
         val itemsRv = findViewById<RecyclerView>(R.id.itemsRv)
@@ -60,15 +61,35 @@ class MainActivity : AppCompatActivity() {
                 })
         )
         submitButton.setOnClickListener { v ->
-            // Get the user-entered information.
-            // Add the new item to the list
-            ItemFetcher.addItem(newName.text.toString(),
-                                newPrice.text.toString().toDouble(),
-                                newUrl.text.toString())
-            itemCount ++
-            // Update the RecyclerView
-            // Based on https://stackoverflow.com/questions/31367599/how-to-update-recyclerview-adapter-data
-            adapter.notifyItemChanged(itemCount)
+            // Hide the keyboard
+            val hide = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+            hide?.hideSoftInputFromWindow(v.windowToken, 0)
+            // Get the user-entered information. First, basic validation!
+            if (newName.text.toString().isEmpty()) {
+                // If we did not get a name, stop now
+                Toast.makeText(this, getString(R.string.nameError), Toast.LENGTH_SHORT).show()
+                goodItem = false
+            }
+            else if (newPrice.text.toString().isEmpty()) {
+                // If the user did not enter a valid price, use zero as a placeholder
+                newPrice.setText("0")
+            }
+
+            if (goodItem) {
+                // Add the new item to the list
+
+                ItemFetcher.addItem(
+                    newName.text.toString(),
+                    newPrice.text.toString().toDouble(),
+                    newUrl.text.toString()
+                )
+                itemCount++
+                // Update the RecyclerView
+                // Based on https://stackoverflow.com/questions/31367599/how-to-update-recyclerview-adapter-data
+                adapter.notifyItemChanged(itemCount)
+            }
+            // Reset the flag
+            goodItem = true
             // Clear the old data
             newName.text.clear()
             newPrice.text.clear()
