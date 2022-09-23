@@ -33,8 +33,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/)
 
 ## Notes
 
-Challenging to implement item storage with no database!
-Long press handling was tricky
+- Challenging to implement item storage with no database!
+- Long press handling was tricky
 
 ## License
 
